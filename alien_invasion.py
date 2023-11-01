@@ -7,7 +7,7 @@ from settings import Settings
 from ship import Ship
 import game_functions as gf
 
-#Creating a Pygame Window and Responding to User Input
+# Creating a Pygame Window and Responding to User Input
 
 def run_game():
     # Initialize game and create a screen object.
@@ -29,13 +29,7 @@ def run_game():
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         bullets.update()
-
-        # Ge rid of bullets that have disappeared.
-        for bullet in bullets.copy():
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
-        print(len(bullets))
-
+        gf.update_bullets(bullets)
         gf.update_screen(ai_settings, screen, ship, bullets)
 
 run_game()
