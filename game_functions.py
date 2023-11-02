@@ -89,4 +89,4 @@ def create_fleet(ai_settings, screen, aliens):
 
     # Create the first row of aliens.
     for alien_number in range(number_aliens_x):
-        create_alien(ai_settings, screen, alien_number)
+        create_alien(ai_settings, screen, aliens, alien_number)
