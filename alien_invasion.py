@@ -21,7 +21,7 @@ def run_game():
 
 
     # Create the fleet of aliens.
-    gf.create_fleet(ai_settings, screen, aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
 
 
 
