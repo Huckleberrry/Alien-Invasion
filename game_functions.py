@@ -139,7 +139,8 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
     # Remove any bullets and aliens that have collided
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
     if collisions:
-        stats.score += ai_settings.alien_points
+        for aliens in collisions.values():
+            stats.score += ai_settings.alien_points * len(aliens)
         sb.prep_score()
     if len(aliens) == 0:
         # Destroy exisiting bullets, speed up game, and create new fleet.
